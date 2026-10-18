@@ -61,29 +61,3 @@ def check_winner(board, player):
 
 
     return False
-
-
-
-
-if __name__ == "__main__":
-
-    # Test the four possible winning directions
-    test_cases = {
-        "Horizontal": [(5, 0), (5, 1), (5, 2), (5, 3)],
-        "Vertical": [(2, 3), (3, 3), (4, 3), (5, 3)],
-        "Diagonal down": [(2, 0), (3, 1), (4, 2), (5, 3)],
-        "Diagonal up": [(5, 0), (4, 1), (3, 2), (2, 3)]
-    }
-
-    for name, positions in test_cases.items():
-        board = create_board()
-
-        # Place the human's pieces at the test positions
-        for row, col in positions:
-            board[row][col] = human
-
-        print(name, ":", check_winner(board, human))
-
-    # An empty board should have no winner
-    board = create_board()
-    print("Empty board:", check_winner(board, human))
